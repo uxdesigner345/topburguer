@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<title>Top burguer</title>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta charset="utf-8">	
+	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script>
+        $(function(){
+    //abrindo tela de modal junto com a página e fechando depois de 3 seg
+    $("#abrir").modal("show");
+
+    setTimeout(function(){
+       $("#modal").modal("hide");
+   },3000);
+
+    $(".btnjs").button();
+
+    $("#troca-estado").click(function(){
+        var btn = $(this);
+        btn.button("loading");
+
+        setTimeout(function(){
+            btn.button("reset");
+        }, 3000);
+
+    });
+
+});
+</script>
+
+</head>
+<body data-spy="scroll">
+   <div>
+      <header>
+        <div class="menu_black navbar-fixed-top">
+           <a class="navbar-brand" href="#">Top Burguer</a>
+           <nav class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-hamburguinho" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div class="collapse navbar-collapse" id="menu-hamburguinho">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="cardapio.html">Cardápio</a></li>
+                        <li><a data-toggle="modal" data-target="#abrir2">Cadastre-se</a></li>
+                        <li><a data-toggle="modal" data-target="#abrir">Meus pedido</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="col-md-6">
+
+    <!--INICIO JANELA MODAL(cadastro)-->
+    <!--tabindex-->
+    <!--*area-hidden* entende que q janela esta fechada-->
+    <div class="modal fade" id="abrir2" role="dialog" tabindex="-1" area-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">
+                     <span area-hidden="true">&times;</span>
+                     <span class="sr-only">x</span>
+                 </button>
+                 <h4 class="modal-title">Cadastre-se</h4>
+             </div>
+             <div class="modal-body">
+                 <form action="">
+                     <div class="form-group">
+                         <label for="">Nome completo</label>
+                         <input class="form-control" type="text" placeholder="">
+
+                         <label for="">Email</label>
+                         <input class="form-control" type="email" placeholder="email@email.com">
+
+                         <label for="">Telefone</label>
+                         <input type="number" class="form-control" placeholder="(**) *****-******">
+
+                         <label for="">Senha</label>
+                         <input class="form-control" type="password">
+
+                         <label for="">Repita senha</label>
+                         <input class="form-control" type="password"><br>
+
+                         <button class="btn btn-sm btn-primary" class="form-control" type="submit">CADASTRAR</button>
+                     </div>
+                 </form>
+             </div> 
+             <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">FECHAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--FIM JANELA MODAL-->
+
+<!--INICIO JANELA MODAL(meus pedidos)-->
+<!--tabindex-->
+<!--*area-hidden* entende que q janela esta fechada-->
+<div class="modal fade" id="abrir" role="dialog" tabindex="-1" area-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                 <span area-hidden="true">&times;</span>
+                 <span class="sr-only">x</span>
+             </button>
+             <h4 class="modal-title">Login</h4>
+         </div>
+         <div class="modal-body">
+             <form action="">
+                 <div class="form-group">
+                     <label for="">Usuário</label>
+                     <input class="form-control" type="text" placeholder="Email ou Usuário">
+                     <label for="">Senha</label>
+                     <input class="form-control" type="password">
+                     <br>
+                     <button class="btn btn-sm btn-primary" class="form-control" type="submit">ACESSAR</button>
+                 </div>
+             </form>
+         </div> 
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">FECHAR</button>
+        </div>
+    </div>
+</div>
+</div>
+<!--FIM JANELA MODAL-->
+</div>
+</div>
+<!--slid-->
+<div class="container banner">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 banner_text">
+            <img src="img/stars.png">
+            <h1 id="titulo" class="text-center">Sabor irresistível</h1>
+            <div class="hamb">
+            <img class="animate__animated animate__bounce hamb" src="img/hamburguer-de-queijo.png">
+            </div>
+            <hr>
+            <h3 class="text-center">Entrega rápida,pediu chegou!</h3>
+        </div>
+    </div>
+</div>
+
+<div class="container favoritos" id="favorito">
+    <div class="row">
+        <div class="titulos col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+            <img class="img-responsive" src="img/favoritos.png">
+        </div>
+        <div class="col-md-8 col-md-offset-2 col-sm-12">
+                    <!-- Carousel
+                        ================================================== -->
+                        <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img style="width:100%" class="first-slide" src="img/banner4.png" alt="First slide">
+
+                                </div>
+                                <div class="item">
+                                    <img style="width:100%" class="second-slide" src="img/banner5.png" alt="Second slide">
+
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon-glyphicon-menu-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                <span class="glyphicon-glyphicon-menu-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!--fim carousel -->
+                    <div class="col-md-6 col-md-offset-3 col-sm-12">
+                        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                     consequat.</p>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!--promoção-->
+     <!--<div class="container promocao titulos">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+                <img class="img-responsive" src="img/promocao.png">
+                
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+         </div>
+     </div>
+ </div>
+ <!-- fim promoção-->
+ <!--qeum somos-->
+ <div class="container quem_somos" id="quemsomos">
+    <div class="row">
+        <div class="titulos col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+            <img class="img-responsive" src="img/quem_somos.png">
+            <!--<img class="img-responsive" src="img/promocao.png">-->
+
+            <div class="col-md-6  col-sm-12 img_quem_somos" >
+               <img class="img-responsive" src="img/quem somos teste2.png">
+           </div>
+           <div id="quem_text" class="col-md-6 col-sm-12">
+            <h2>Top Burguer</h2>
+            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+         cillum dolore eu fugiat nulla pariatur. </p>
+
+     </div>
+ </div>
+
+ <div class="titulos col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" id="localizacao">
+
+    <a href="https://play.google.com/store/?utm_source=latam_Med&utm_medium=hasem&utm_content=Jul1520&utm_campaign=Evergreen&pcampaignid=MKT-FDR-latam-br-1002290-Med-hasem-py-Evergreen-Jul1520-Text_Search_BKWS-28432345789&gclid=Cj0KCQjw8eOLBhC1ARIsAOzx5cFGYyJ9UfTlyGgO2zVMaMFtHf6B6lBqm-yNrEx_0kjNDwcGe_9lHa4aApV4EALw_wcB&gclsrc=aw.ds" target="_blank"><img class="img-responsive" src="img/app2.png"></a>
+</div>
+
+
+</div>
+</div>
+</div>
+<!--fim quem somos-->
+<div class="">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235199.33674642612!2d-43.58606572068231!3d-22.913753086558447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bde559108a05b%3A0x50dc426c672fd24e!2sRio%20de%20Janeiro%2C%20RJ!5e0!3m2!1spt-BR!2sbr!4v1635363589731!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+<!--franquia-->
+<div class="container franquia titulos " id="franquia">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-8 col-md-offset-2 franquia_text">
+                <h3 class="text-center">Seja um franqueado! </h3>
+                <h4 class="text-center">LUCRO LIQUIDO DE 10% A 16%</h4>
+                <div class="col-md-6 col-md-offset-3"><a href="#" class="text-center">Eu quero!</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--fim franquia-->
+
+
+<footer>
+
+  <div class="container rodape">
+    <div class="row">
+       <div class="col-md-10 col-md-offset-1 rodape_posi"> 
+        <div class="col-md-6 col-lg-3 col-sm-12">
+            <h4 class="text-center">Redes sociais</h4>
+            <ul>
+                <li>Facebook</li>
+                <li>Instagram</li>
+                <li>Tik tok</li>
+                <li>Linkedin</li>
+
+            </ul>
+
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-12">
+            <h4 class="text-center">Contato</h4>
+            <ul>
+                <li>RJ Tel (21)******-*******</li>
+                <li>SP Tel (21)******-*******</li>
+                <li>PR Tel (21)******-*******</li>
+                <li>Email topburguer@hol.com.br</li>
+
+            </ul>
+
+        </div>
+
+        <div class="col-md-6 col-lg-3 col-sm-12">
+            <h4 class="text-center">Franquias</h4>
+            <ul>
+                <li>Rio de janeiro</li>
+                <li>São Paulo</li>
+                <li>Minas Gerais</li>
+                <li>Pernanbuco</li>
+
+            </ul>
+
+        </div>
+
+        <div id="linkedin" class="col-md-6 col-lg-3 col-sm-12">
+            <h4 class="text-center">Trabalhe conosco</h4>
+            <a href="#">Linkedin</a>
+
+        </div>
+
+
+    </div>
+</div>
+</div>
+</footer>
+<div id="sandro" class="col-md-8 col-md-offset-2 text-center"><span><a href="https://sandrodesigner.jimdo.com" target="_blank" title="Potifólio">Desenvolvedor Sandro Gomes</span></a></div>
+<!--SCROLL SUAVE-->
+  <script>
+    jQuery(document).ready(function($) { 
+      $(".scroll").click(function(event){        
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 1000);
+      });
+    });
+  </script>
+  <!-- FIM SCROLL SUAVE-->
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<title>Top burguer</title>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta charset="utf-8">	
+	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script>
+        $(function(){
+    //abrindo tela de modal junto com a página e fechando depois de 3 seg
+    $("#abrir").modal("show");
+
+    setTimeout(function(){
+       $("#modal").modal("hide");
+   },3000);
+
+    $(".btnjs").button();
+
+    $("#troca-estado").click(function(){
+        var btn = $(this);
+        btn.button("loading");
+
+        setTimeout(function(){
+            btn.button("reset");
+        }, 3000);
+
+    });
+
+});
+</script>
+
+</head>
+<body data-spy="scroll">
+   <div>
+      <header>
+        <div class="menu_black navbar-fixed-top">
+           <a class="navbar-brand" href="#">Top Burguer</a>
+           <nav class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-hamburguinho" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div class="collapse navbar-collapse" id="menu-hamburguinho">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="cardapio.html">Cardápio</a></li>
+                        <li><a data-toggle="modal" data-target="#abrir2">Cadastre-se</a></li>
+                        <li><a data-toggle="modal" data-target="#abrir">Meus pedido</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="col-md-6">
+
+    <!--INICIO JANELA MODAL(cadastro)-->
+    <!--tabindex-->
+    <!--*area-hidden* entende que q janela esta fechada-->
+    <div class="modal fade" id="abrir2" role="dialog" tabindex="-1" area-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">
+                     <span area-hidden="true">&times;</span>
+                     <span class="sr-only">x</span>
+                 </button>
+                 <h4 class="modal-title">Cadastre-se</h4>
+             </div>
+             <div class="modal-body">
+                 <form action="">
+                     <div class="form-group">
+                         <label for="">Nome completo</label>
+                         <input class="form-control" type="text" placeholder="">
+
+                         <label for="">Email</label>
+                         <input class="form-control" type="email" placeholder="email@email.com">
+
+                         <label for="">Telefone</label>
+                         <input type="number" class="form-control" placeholder="(**) *****-******">
+
+                         <label for="">Senha</label>
+                         <input class="form-control" type="password">
+
+                         <label for="">Repita senha</label>
+                         <input class="form-control" type="password"><br>
+
+                         <button class="btn btn-sm btn-primary" class="form-control" type="submit">CADASTRAR</button>
+                     </div>
+                 </form>
+             </div> 
+             <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">FECHAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--FIM JANELA MODAL-->
+
+<!--INICIO JANELA MODAL(meus pedidos)-->
+<!--tabindex-->
+<!--*area-hidden* entende que q janela esta fechada-->
+<div class="modal fade" id="abrir" role="dialog" tabindex="-1" area-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                 <span area-hidden="true">&times;</span>
+                 <span class="sr-only">x</span>
+             </button>
+             <h4 class="modal-title">Login</h4>
+         </div>
+         <div class="modal-body">
+             <form action="">
+                 <div class="form-group">
+                     <label for="">Usuário</label>
+                     <input class="form-control" type="text" placeholder="Email ou Usuário">
+                     <label for="">Senha</label>
+                     <input class="form-control" type="password">
+                     <br>
+                     <button class="btn btn-sm btn-primary" class="form-control" type="submit">ACESSAR</button>
+                 </div>
+             </form>
+         </div> 
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">FECHAR</button>
+        </div>
+    </div>
+</div>
+</div>
+<!--FIM JANELA MODAL-->
+</div>
+</div>
+<!--slid-->
+<div class="container banner">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 banner_text">
+            <img src="img/stars.png">
+            <h1 id="titulo" class="text-center">Sabor irresistível</h1>
+            <div class="hamb">
+            <img class="animate__animated animate__bounce hamb" src="img/hamburguer-de-queijo.png">
+            </div>
+            <hr>
+            <h3 class="text-center">Entrega rápida,pediu chegou!</h3>
+        </div>
+    </div>
+</div>
+
+
+<!--cardapio-->
+<div class="container cardapio" id="cardapio">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1"> 
+            <div class="titulos col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+                <img class="img-responsive" src="img/cardapios.png">
+            </div>
+            <div class="col-md-6 col-lg-4 col-sm-12">
+             <p class="text-center cardapio_titu">Hamburguer Premium</p>
+             <div class="thumbnail">
+                <img src="img/burguer3.png" alt="">
+                <div class="caption">
+                    <h4></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <button class="btn btn-lg btn_saiba" href="">Saiba mais</button>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="col-md-6 col-lg-4 col-sm-12 wow zoomInDown" data-wow-delay="1s">
+            <p class="text-center cardapio_titu">Sanduíches</p>
+            <div class="thumbnail">
+                <img src="img/sanduiche.png" alt="">
+                <div class="caption">
+                    <h4></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <button class="btn btn-lg btn_saiba" href="">Saiba mais</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-sm-12">
+            <p class="text-center cardapio_titu">Bebidas</p>
+            <div class="thumbnail">
+                <img src="img/refri3.png" alt="">
+                <div class="caption">
+                    <h4></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <button class="btn btn-lg btn_saiba" href="">Saiba mais</button>
+                </div>
+            </div>
+            
+
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-sm-12">
+            <p class="text-center cardapio_titu">Sorvetes</p>
+            <div class="thumbnail">
+                <img src="img/sorvete.png" alt="">
+                <div class="caption">
+                    <h4></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <button class="btn btn-lg btn_saiba" href="">Saiba mais</button>
+                </div>
+            </div>
+            
+
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-sm-12">
+            <p class="text-center cardapio_titu">X Artesanais</p>
+            <div class="thumbnail">
+                <img src="img/cardapio2.png" alt="">
+                <div class="caption">
+                    <h4></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <button class="btn btn-lg btn_saiba" href="">Saiba mais</button>
+                </div>
+            </div>
+            
+
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-sm-12">
+            <p class="text-center cardapio_titu">Da Top Casa</p>
+            <div class="thumbnail">
+                <img src="img/burguer4.png" alt="">
+                <div class="caption">
+                    <h4></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <button class="btn btn-lg btn_saiba" href="">Saiba mais</button>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+</div>
+<!--fim cardapio-->
+<footer>
+
+  <div class="container rodape">
+    <div class="row">
+       <div class="col-md-10 col-md-offset-1 rodape_posi"> 
+        <div class="col-md-6 col-lg-3 col-sm-12">
+            <h4 class="text-center">Redes sociais</h4>
+            <ul>
+                <li>Facebook</li>
+                <li>Instagram</li>
+                <li>Tik tok</li>
+                <li>Linkedin</li>
+
+            </ul>
+
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-12">
+            <h4 class="text-center">Contato</h4>
+            <ul>
+                <li>RJ Tel (21)******-*******</li>
+                <li>SP Tel (21)******-*******</li>
+                <li>PR Tel (21)******-*******</li>
+                <li>Email topburguer@hol.com.br</li>
+
+            </ul>
+
+        </div>
+
+        <div class="col-md-6 col-lg-3 col-sm-12">
+            <h4 class="text-center">Franquias</h4>
+            <ul>
+                <li>Rio de janeiro</li>
+                <li>São Paulo</li>
+                <li>Minas Gerais</li>
+                <li>Pernanbuco</li>
+
+            </ul>
+
+        </div>
+
+        <div id="linkedin" class="col-md-6 col-lg-3 col-sm-12">
+            <h4 class="text-center">Trabalhe conosco</h4>
+            <a href="#">Linkedin</a>
+
+        </div>
+
+
+    </div>
+</div>
+</div>
+</footer>
+<div id="sandro" class="col-md-8 col-md-offset-2 text-center"><span><a href="https://sandrodesigner.jimdo.com" target="_blank" title="Potifólio">Desenvolvedor Sandro Gomes</span></a></div>
+<!--SCROLL SUAVE-->
+  <script>
+    jQuery(document).ready(function($) { 
+      $(".scroll").click(function(event){        
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 1000);
+      });
+    });
+  </script>
+  <!-- FIM SCROLL SUAVE-->
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
